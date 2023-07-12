@@ -1,7 +1,9 @@
 import pickle
 import joblib
+import pandas as pd
 import streamlit as st
 from preprocessor import preprocess_text
+import matplotlib.pyplot as plt
 import nltk
 import tensorflow as tf
 nltk.download('punkt')
@@ -50,8 +52,11 @@ def main():
     st.markdown(
         """
         <style>
-        .css-1avcm0n {
-        height: 0;
+        .css-1dp5vir {
+        background-image: linear-gradient(90deg, rgb(75 81 255), rgb(120 7 165));
+        }
+        .css-1avcm0n{
+        background: transparent;
         }
         .css-1y4p8pa {
         padding: 0 1rem 10rem;
@@ -118,7 +123,7 @@ def main():
             st.markdown(response)
         # Add assistant response to chat history
         st.session_state.messages.append({'role': 'assistant', 'content': response})
-        
+
 if __name__ == "__main__":
     main()
     
