@@ -50,17 +50,17 @@ def main():
     st.markdown(
         """
         <style>
-        .css-1iktosd {
+        .css-1avcm0n {
         height: 0;
         }
-        .st-c4 {
-        color: rgb(223 223 223);
-        }
-        .st-cm {
-        caret-color: rgb(217 217 217);
-        }
         .css-1y4p8pa {
-        border: 2px #39496c solid;
+        padding: 0 1rem 10rem;
+        }
+        .css-1n76uvr {
+        gap: 0;
+        }
+        .css-1taab8 {
+        background-color: #aab1b5;
         }
         </style>
         """, unsafe_allow_html=True
