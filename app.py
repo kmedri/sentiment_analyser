@@ -50,6 +50,9 @@ def main():
     st.markdown(
         """
         <style>
+        .css-1iktosd {
+        height: 0;
+        }
         .st-c4 {
         color: rgb(223 223 223);
         }
@@ -62,7 +65,7 @@ def main():
         </style>
         """, unsafe_allow_html=True
     )
-    st.image("https://raw.githubusercontent.com/kmedri/OLC_Streamlit/style/assets/omdenaliverpoollogo.png?raw=true")
+    st.image("https://github.com/kmedri/sentiment_analyser/blob/main/assets/words.png?raw=true")
     st.title(APP_TITLE)
     st.write('Welcome to Sentiment Bot!')
     st.write('Our application is powered by advanced Machine Learning technologies and designed to understand the underlying sentiment in your text inputs.')
