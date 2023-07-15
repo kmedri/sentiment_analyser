@@ -45,9 +45,10 @@ nb_model = get_model()
 
 def main():
     # Colors:
-    # Blue = #182D40
-    # Light Blue = #82a6c0
-    # Green = #4abd82#39496c
+    # Dark Blue - primaryColor = "#0012bb"
+    # Blue - backgroundColor = "#6d7acb"
+    # Light Blue - secondaryBackgroundColor = "#05afff"
+    # TextColor = "#182D40"
 
     st.markdown(
         """
@@ -55,7 +56,7 @@ def main():
         .css-1dp5vir {
         background-image: linear-gradient(90deg, rgb(75 81 255), rgb(120 7 165));
         }
-        .css-1avcm0n{
+        .css-1iktosd{
         background: transparent;
         }
         .css-1y4p8pa {
@@ -66,6 +67,18 @@ def main():
         }
         .css-1taab8 {
         background-color: #aab1b5;
+        }
+        .css-13jzekw:hover {
+        background-color: #05afff;
+        }
+        code {
+        color: #0012bb;
+        }
+        .css-janbn0 {
+        background-color: rgb(165 174 255 / 50%);
+        }
+        .css-4oy321 {
+        padding: 1rem 0px 1rem 1rem;
         }
         </style>
         """, unsafe_allow_html=True
@@ -99,12 +112,9 @@ def main():
         # Add user message to chat history
         st.session_state.messages.append({'role': 'user', 'content': prompt})
 
-
-        def preprocess_text_list(texts):
-            return [preprocess_text(text) for text in texts]
-        
         # Analyze sentiment using your model
-        new_text = preprocess_text_list(prompt)
+        new_text = preprocess_text(prompt)
+        new_text = [new_text]
         new_text = text_vectorizer.transform(new_text).toarray()
         sentiment = nb_model.predict(new_text)  # Replace `predict()` with the appropriate method for sentiment analysis
 
@@ -126,10 +136,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
-    # # React to user input
-    # if prompt := st.chat_input('Enter your text here'):
-    #     # Display user message in chat message container
-    #     st.chat_message('user').markdown(prompt)
-    #     # Add user message to chat history
-    #     st.session_state.messages.append({'role': 'user', 'content': prompt})

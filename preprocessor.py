@@ -1,13 +1,10 @@
-# Importing relevant packages
+# Importing packages
 
-import pickle
 import re
 from nltk.stem import WordNetLemmatizer
 from gensim.parsing.preprocessing import remove_stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk import word_tokenize
-import nltk  # Import NLTK (Natural Language Toolkit) for natural language processing tasks
-
 
 def preprocess_text(text):
     # Remove mentions (@username) and hashtags (#tech)
