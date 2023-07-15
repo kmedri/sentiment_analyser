@@ -145,17 +145,17 @@ def main():
 
     # with col2:
     # Create a Boxplot of Tweet Lengths
-    st.title('Boxplot of Tweet Lengths')
+    # st.title('Boxplot of Tweet Lengths')
 
-    # Create a figure and axis for the boxplot
-    fig, ax = plt.subplots(figsize=(10, 6))
+    # # Create a figure and axis for the boxplot
+    # fig, ax = plt.subplots(figsize=(10, 6))
 
-    # Create the boxplot
-    ax.boxplot(df['tweet_length'], vert=False, flierprops=dict(markerfacecolor='r', marker='D'), patch_artist=True)
-    ax.set_title('Boxplot of Tweet Lengths')
+    # # Create the boxplot
+    # ax.boxplot(df['tweet_length'], vert=False, flierprops=dict(markerfacecolor='r', marker='D'), patch_artist=True)
+    # ax.set_title('Boxplot of Tweet Lengths')
 
-    # Display the boxplot in Streamlit
-    st.pyplot(fig) 
+    # # Display the boxplot in Streamlit
+    # st.pyplot(fig) 
 
 if __name__ == "__main__":
     main()
