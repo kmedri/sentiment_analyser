@@ -41,6 +41,14 @@ def get_model():
 
 nb_model = get_model()
 
+
+def load_csv(path):
+    df = pd.read_csv(path)
+    return df
+
+df = load_csv('assets/cleaned_tweets.csv')
+
+
 # Building the front end
 
 def main():
@@ -133,6 +141,19 @@ def main():
             st.markdown(response)
         # Add assistant response to chat history
         st.session_state.messages.append({'role': 'assistant', 'content': response})
+
+    # # Create a Boxplot of Tweet Lengths
+    # st.title('Boxplot of Tweet Lengths')
+
+    # # Create a figure and axis for the boxplot
+    # fig, ax = plt.subplots(figsize=(10, 6))
+
+    # # Create the boxplot
+    # ax.boxplot(df['tweet_length'], vert=False, flierprops=dict(markerfacecolor='r', marker='D'), patch_artist=True)
+    # ax.set_title('Boxplot of Tweet Lengths')
+
+    # # Display the boxplot in Streamlit
+    # st.pyplot(fig)
 
 if __name__ == "__main__":
     main()
