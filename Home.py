@@ -3,7 +3,6 @@ import joblib
 import pandas as pd
 import streamlit as st
 from preprocessor import preprocess_text
-import matplotlib.pyplot as plt
 import nltk
 import tensorflow as tf
 nltk.download('punkt')
@@ -40,13 +39,6 @@ def get_model():
 
 
 nb_model = get_model()
-
-
-def load_csv(path):
-    df = pd.read_csv(path)
-    return df
-
-df = load_csv('assets/cleaned_tweets.csv')
 
 
 # Building the front end
@@ -96,8 +88,7 @@ def main():
     st.write('Welcome to Sentiment Bot!')
     st.write('Our application is powered by advanced Machine Learning technologies and designed to understand the underlying sentiment in your text inputs.')
     st.write('Using an innovative combination of TF-IDF vectorization and the Multinomial Naive Bayes algorithm, Sentiment Bot effectively analyses and categorizes the sentiment of your text as positive, negative, or neutral.')
-    # col1, col2 = st.columns(2)
-    # with col1:
+
     # Button to clear chat history
     if st.button('Clear chat history'):
         st.session_state.messages = []
@@ -142,20 +133,6 @@ def main():
             st.markdown(response)
         # Add assistant response to chat history
         st.session_state.messages.append({'role': 'assistant', 'content': response})
-
-    # with col2:
-    # Create a Boxplot of Tweet Lengths
-    # st.title('Boxplot of Tweet Lengths')
-
-    # # Create a figure and axis for the boxplot
-    # fig, ax = plt.subplots(figsize=(10, 6))
-
-    # # Create the boxplot
-    # ax.boxplot(df['tweet_length'], vert=False, flierprops=dict(markerfacecolor='r', marker='D'), patch_artist=True)
-    # ax.set_title('Boxplot of Tweet Lengths')
-
-    # # Display the boxplot in Streamlit
-    # st.pyplot(fig) 
 
 if __name__ == "__main__":
     main()
