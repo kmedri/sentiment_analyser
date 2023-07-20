@@ -80,6 +80,9 @@ def main():
         .css-4oy321 {
         padding: 1rem 0px 1rem 1rem;
         }
+        .css-s1k4sy {
+        background-color: rgb(120, 132, 206);
+        }
         </style>
         """, unsafe_allow_html=True
     )
