@@ -54,13 +54,13 @@ def main():
         """
         <style>
         .css-1dp5vir {
-        background-image: linear-gradient(90deg, rgb(75 81 255), rgb(120 7 165));
+        background-image: linear-gradient(90deg, rgb(75 81 255), rgb(120 7 165)); # Background gradient at top of page
         }
         .css-1iktosd{
         background: transparent;
         }
-        .css-1y4p8pa {
-        padding: 0 1rem 10rem;
+        .css-4tabn8 {
+        background-color: #cad2ff; # Menu caret background color
         }
         .css-1n76uvr {
         gap: 0;
